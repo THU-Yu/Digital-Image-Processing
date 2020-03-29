@@ -1,0 +1,18 @@
+I = imread('Data\3.jpg');
+I = rgb2gray(I);
+I1 = I(2294:2342, 2254:2326);
+imwrite(I1, 'Data\3_Inpluse.jpg');
+I2 = fftshift(fft2(im2double(I1)));
+imagesc(log(abs(I2)));
+I3 = I(2298:2342, 1302:1374);
+imwrite(I3, 'Data\3_Gauss.jpg');
+I4 = fftshift(fft2(im2double(I3)));
+imagesc(log(abs(I4)));
+I5 = I(1910:2150, 1286:1590);
+imwrite(I5, 'Data\3_Sin.jpg');
+I6 = fftshift(fft2(im2double(I5)));
+imagesc(log(abs(I6)));
+I7 = I(494:706, 586:1066);
+imwrite(I7, 'Data\3_Rect.jpg');
+I8 = fftshift(fft2(im2double(I7)));
+imagesc(log(abs(I8)));

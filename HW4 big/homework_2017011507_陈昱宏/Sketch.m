@@ -1,0 +1,10 @@
+function NewI = Sketch(Src,T)
+    I = colorgrad(Src);
+    I = im2uint8(I);  
+    I = 255 - I;
+    I = 255/(255-T)*max((I-T),0);
+    I = uint8(I);
+    NewI = Src;
+    NewI(:,:,1) = I;
+    NewI(:,:,2) = I;
+    NewI(:,:,3) = I;
